@@ -12,7 +12,7 @@ test("add x and y", () => {
 *test for passing invalid inputs throws the expectation
 */
 test("add throws exception on int input", () => {
-  expect(my_test.add).toThrow();
+  expect(my_test.add("p", null)).toThrow();
 });
 
 /**
@@ -59,6 +59,22 @@ test("return undefined if number is invalid", () => {
 */
 test("getCompany return expected object", () => {
   expect(my_test.getCompany()).toEqual({name:"Accertix", "date-established":2010, CEO: "Theo"});
+});
+
+/**
+*test function getRange given valid input
+*the correct outpt is returned
+*/
+test("getRange returns correct output on correct input", () => {
+  expect(my_test.getRange(1, 5)).toContain(1,2,3,4);
+});
+
+/**
+*test function getRange given invalid input
+*an exception is thrown
+*/
+test("getRange returns exception on invalid input", () => {
+  expect(my_test.getRange(23, 5)).toThrow();
 });
 
 /**
