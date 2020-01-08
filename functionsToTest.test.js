@@ -58,7 +58,7 @@ test("return undefined if number is invalid", () => {
 *test function getCompany returns expected object
 */
 test("getCompany return expected object", () => {
-  expect(my_test.getCompany()).toEqual({name:"Accertix", date:2010, ceo: "Theo"});
+  expect(my_test.getCompany()).toEqual({name:"Accertix", "date-established":2010, CEO: "Theo"});
 });
 
 /**

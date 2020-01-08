@@ -27,8 +27,8 @@ module.exports = {
   getCompany: () => {
     return {
       name: "Accertix",
-      date: 2010,
-      ceo: "Theo",
+      "date-established": 2010,
+      CEO: "Theo",
     }
   },
 
