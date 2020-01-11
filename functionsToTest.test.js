@@ -11,9 +11,9 @@ test("add x and y", () => {
 /**
 *test for passing invalid inputs throws the expectation
 */
-test("add throws exception on int input", () => {
-  expect(my_test.add("p", null)).toThrow();
-});
+test("add throws exception on invalid input", () => {
+  expect(() => my_test.add('item 1', 1)).toThrow("Invalid input. Please pass 2 integers as parameters")
+ });
 
 /**
 *test function greet to return correct output
@@ -73,8 +73,8 @@ test("getRange returns correct output on correct input", () => {
 *test function getRange given invalid input
 *an exception is thrown
 */
-test("getRange returns exception on invalid input", () => {
-  expect(my_test.getRange(23, 5)).toThrow();
+test("getRange throws exception on invalid input", () => {
+  expect(() => my_test.getRange(8,1)).toThrow();
 });
 
 /**
@@ -83,3 +83,13 @@ test("getRange returns exception on invalid input", () => {
 test("addFloat returns expected result", () => {
   expect(my_test.addFloat()).toBeCloseTo(0.3);
 });
+
+/**
+ * function that waits for a while, and then returns true
+ *
+ * * test the following cases
+ * * calling the function produces the expected result
+ */
+ test("calling the function produces the expected result", async () => {
+   expect(my_test.asyncFunction()).resolves.toBe(true);
+ });

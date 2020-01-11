@@ -35,8 +35,8 @@ module.exports = {
   //function that returns an array representing the range of the input integers
   getRange: (num1, num2) => {
     if(num2 < num1){
-      throw "the 2nd parameter should be greater than the first";
-    };
+      throw  "the 2nd parameter should be greater than the first";
+    }
     let result = [];
 
     for(let i = num1; i < num2; i++){
@@ -49,15 +49,12 @@ module.exports = {
   addFloat: () => {
     return 0.1 + 0.2;
   },
-
-  //function that waits for a while, and then returns true
-  asyncFunction: () => {
+  asyncFunction: async () => {
     return new Promise((resolve, reject) => {
-    const time = Math.random() * 5000
-
-    setTimeout(() => {}, time)
-
-    resolve(true)
-  })
-  },
+      const time = Math.random() * 5000;
+      setTimeout(() => {
+        console.log("hi");
+      }, time);
+    });
+  }
 }
